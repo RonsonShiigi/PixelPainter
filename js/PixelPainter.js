@@ -42,9 +42,7 @@ back.innerHTML='Rewind';
 buttonRow.appendChild(back);
 
 
-
 //grid function
-
 function gridMe(height,width){
     let grid = document.createElement('div');
     grid.className='grid';
@@ -68,6 +66,7 @@ function gridMe(height,width){
 let gridRow = document.createElement('div');
 gridRow.id='gridRow';
 pixelPainter.appendChild(gridRow);
+
 //palette stuff
 let palette = gridMe(3,5);
 palette.id='palette';
@@ -90,7 +89,7 @@ gridRow.appendChild(selectFlex);
 selectFlex.appendChild(select)
 
 
-//setting palette up
+//Setting palette up
 let pix = document.getElementsByClassName('pix');
 
 for(var i=0;i<pix.length;i++){
@@ -100,12 +99,17 @@ for(var i=0;i<pix.length;i++){
     }
 }
 //palette colors
-let colors = ['red','brown','rgb(255, 0, 216)','black','white','rgb(255, 97, 0)','rgb(130, 76, 1)','blue','rgb(86, 114, 255)','rgb(19, 126, 130)','rgb(255, 204, 0)','rgb(249, 249, 0)','rgb(0, 249, 236) ','rgb(0, 255, 131)','rgb(32, 242, 29)'];
+let colors = ['red','brown','rgb(255, 0, 216)','gray','black','rgb(255, 97, 0)','rgb(130, 76, 1)','blue','rgb(86, 114, 255)','rgb(19, 126, 130)','rgb(255, 204, 0)','rgb(249, 249, 0)','rgb(0, 249, 236) ','rgb(0, 255, 131)','rgb(32, 242, 29)'];
 
 for(var i=0;i<colors.length;i++){
-    pix[i].style.backgroundColor=colors[i]
+    pix[i].style.backgroundColor=colors[i];
+    pix[i].addEventListener('click',pow)
 };
 
+
+function pow(){
+    select.style.backgroundColor=this.style.backgroundColor;
+}
 
 
 
