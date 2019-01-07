@@ -64,27 +64,34 @@ pixelPainter.appendChild(gridRow);
 //palette stuff
 let palette = gridMe(3,7);
 palette.id='palette';
-gridRow.appendChild(palette)
+let paletteFlex=document.createElement('div');
+paletteFlex.id='paletteFlex';
+gridRow.appendChild(paletteFlex);
+paletteFlex.appendChild(palette);
 
 //paint grid
-let paint = gridMe(30,30);
+let paint = gridMe(40,40);
 paint.id='paint'
 gridRow.appendChild(paint)
 
 //color selector
 let select = document.createElement('div');
 select.id='select';
-gridRow.appendChild(select);
+let selectFlex = document.createElement('div');
+selectFlex.id='selectFlex';
+gridRow.appendChild(selectFlex);
+selectFlex.appendChild(select)
 
-//setting classNames
+
+//setting palette up
 let pix = document.getElementsByClassName('pix');
 
-console.log(pix)
-// for(var i=0;i<pix.length;i++){
-//     if(i<=21){
-//         pix[i].className+='dab'
-//     }
-// }
+for(var i=0;i<pix.length;i++){
+    if(i<=20){
+        pix[i].style.height = '30px';
+        pix[i].style.width='30px';
+    }
+}
 
 
 
