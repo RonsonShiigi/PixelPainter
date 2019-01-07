@@ -26,6 +26,12 @@ restart.id='restart';
 restart.className='topButtons';
 restart.innerHTML='Restart';
 buttonRow.appendChild(restart);
+restart.addEventListener('click',restartFunc);
+function restartFunc(){
+for(var i=16;i<pix.length;i++){
+     pix[i].style.backgroundColor='white';
+ }
+}
 
 //Save
 let save = document.createElement('button');
@@ -99,7 +105,7 @@ for(var i=0;i<pix.length;i++){
     }
 }
 //palette colors
-let colors = ['red','brown','rgb(255, 0, 216)','gray','black','rgb(255, 97, 0)','rgb(130, 76, 1)','blue','rgb(86, 114, 255)','rgb(19, 126, 130)','rgb(255, 204, 0)','rgb(249, 249, 0)','rgb(0, 249, 236) ','rgb(0, 255, 131)','rgb(32, 242, 29)'];
+let colors = ['red','brown','rgb(255, 0, 216)','gray',  'black','rgb(255, 97, 0)','rgb(130, 76, 1)','blue','rgb(86, 114, 255)','rgb(19, 126, 130)','rgb(255, 204, 0)','rgb(249, 249, 0)','rgb(0, 249, 236) ','rgb(0, 255, 131)','rgb(32, 242, 29)'];
 
 for(var i=0;i<colors.length;i++){
     pix[i].style.backgroundColor=colors[i];
@@ -111,6 +117,13 @@ function pow(){
     select.style.backgroundColor=this.style.backgroundColor;
 }
 
+for(var i=16;i<pix.length;i++){
+    pix[i].addEventListener('mouseover',wow);
+}
+function wow(){
+   this.style.backgroundColor=select.style.backgroundColor;
+   console.log('hi')
+}
 
 
 
