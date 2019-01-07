@@ -100,7 +100,11 @@ for(var i=0;i<pix.length;i++){
     }
 }
 //palette colors
-let colors = ['red','rgb(255, 67, 0)','rgb(255, 174, 0)','rgb(255, 255, 0)','rgb(174, 255, 0)','rgb(63, 255, 0)','rgb(0, 255, 21)','rgb(0, 255, 242)','rgb(0, 144, 255)','rgb(0, 144, 255)','rgb(93, 0, 255)','rgb(255, 0, 216)','brown','black','white'];
+let colors = ['red','brown','rgb(255, 0, 216)','black','white','rgb(255, 97, 0)','rgb(130, 76, 1)','blue','rgb(86, 114, 255)','rgb(19, 126, 130)','rgb(255, 204, 0)','rgb(249, 249, 0)','rgb(0, 249, 236) ','rgb(0, 255, 131)','rgb(32, 242, 29)'];
+
+for(var i=0;i<colors.length;i++){
+    pix[i].style.backgroundColor=colors[i]
+};
 
 
 
