@@ -34,6 +34,13 @@ save.className='topButtons'
 save.innerHTML='Save';
 buttonRow.appendChild(save);
 
+//Go to last saved button
+let back = document.createElement('button');
+back.id='back';
+back.className='topButtons';
+back.innerHTML='Rewind';
+buttonRow.appendChild(back)
+
 
 
 //grid function
