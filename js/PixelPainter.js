@@ -1,61 +1,93 @@
 
-const pixelPainter = document.getElementById('pixelPainter');
 
 
 
-var canvas = (function(height,width){
-console.log('hi')
-//button row stuff
-let buttonRow = document.createElement('div');
+
+var canvas = (function(){
+    
+    
+const pixelPainter = document.getElementById('pixelPainter')
+
+//Buttons
+let buttonRow= document.createElement('div');
 buttonRow.id='buttonRow';
 pixelPainter.appendChild(buttonRow);
-//eraser
-let eraser = document.createElement('button');
-eraser.id='eraser';
-eraser.innerHTML='Eraser';
-buttonRow.appendChild(eraser);
-//clear
+
+//Clear Color Button
 let clear = document.createElement('button');
 clear.id='clear';
-clear.innerHTML='Clear';
+clear.className='topButtons';
+clear.innerHTML='Clear Color';
 buttonRow.appendChild(clear);
-//save
+
+//Restart
+let restart = document.createElement('button');
+restart.id='restart';
+restart.className='topButtons';
+restart.innerHTML='Restart';
+buttonRow.appendChild(restart);
+
+//Save
 let save = document.createElement('button');
 save.id='save';
+save.className='topButtons'
 save.innerHTML='Save';
 buttonRow.appendChild(save);
 
 
-//paint grid stuff
-let grid = document.createElement('div');
-grid.id='grid';
-pixelPainter.appendChild(grid);
+
+//grid function
+
+function gridMe(height,width){
+    let grid = document.createElement('div');
+    grid.className='grid';
+
+    for(var i=0;i<height;i++){
+        let column = document.createElement('div');
+        column.className='column';
+        for(var j=0;j<width;j++){
+            let pix = document.createElement('div');
+            pix.className='pix';
+            column.appendChild(pix);
 
 
-for(var i=0;i<2000;i++){
-let box = document.createElement('div');
-box.className='box';
-grid.appendChild(box)
+        }
+        grid.appendChild(column)
+    }
+    return grid;
 }
 
-
-
-
-//palette
-let palette = document.createElement('div');
+//Row for Palette,Grid,And Selector Box
+let gridRow = document.createElement('div');
+gridRow.id='gridRow';
+pixelPainter.appendChild(gridRow);
+//palette stuff
+let palette = gridMe(3,7);
 palette.id='palette';
-pixelPainter.appendChild(palette);
-//color boxes
-for(var i=0;i<21;i++){
-    let colors = document.createElement('div');
-    colors.className='colors';
-    palette.appendChild(colors);
-}
+gridRow.appendChild(palette)
 
-//setting a box to show what color is selected
+//paint grid
+let paint = gridMe(30,30);
+paint.id='paint'
+gridRow.appendChild(paint)
+
+//color selector
 let select = document.createElement('div');
 select.id='select';
-pixelPainter.appendChild(select);
+gridRow.appendChild(select);
+
+//setting classNames
+let pix = document.getElementsByClassName('pix');
+
+console.log(pix)
+// for(var i=0;i<pix.length;i++){
+//     if(i<=21){
+//         pix[i].className+='dab'
+//     }
+// }
+
+
+
 
 
 })();
