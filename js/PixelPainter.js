@@ -118,17 +118,44 @@ paletteFlex.appendChild(palette);
 
 
 //paint grid(canvas)
-let paint = gridMe(40,40);
+
+let paint = gridMe(100,100);
 paint.id='paint'
 gridRow.appendChild(paint)
+
+//new grid attempt
+// let wall = document.createElement('div');
+// wall.id='wall';
+// gridRow.appendChild(wall);
+// for(var i=0;i<100;i++){
+//     let piks = document.createElement('div');
+//     piks.className='piks';
+//     wall.appendChild(piks);
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //color selector
 let select = document.createElement('div');
 select.id='select';
 let selectFlex = document.createElement('div');
 selectFlex.id='selectFlex';
-gridRow.appendChild(selectFlex);
-selectFlex.appendChild(select);
+// gridRow.appendChild(selectFlex);
+paletteFlex.appendChild(select);
 select.appendChild(miniEraser);
 
 
