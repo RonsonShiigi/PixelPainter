@@ -54,13 +54,24 @@ h1{
 
 }
 
-/* palette, grid, and selector row */
+/* toolbox stuff */
 #paletteFlex{
     display:flex;
     flex-direction: column;
     justify-content: center;
 }
+#eraser{
+    height:70px;
+    width:70px;
+    border-radius: 5px;
+    background-color:gray;
+}
+#eraserPic{
+    height:50px;
+    width:50px;
+}
 
+/* grid, and selector row */
 #selectFlex{
     display: flex;
     flex-direction: column;

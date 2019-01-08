@@ -82,15 +82,33 @@ let gridRow = document.createElement('div');
 gridRow.id='gridRow';
 pixelPainter.appendChild(gridRow);
 
-//palette stuff
-let palette = gridMe(3,5);
-palette.id='palette';
+//tool bar flexbox
 let paletteFlex=document.createElement('div');
 paletteFlex.id='paletteFlex';
 gridRow.appendChild(paletteFlex);
+
+//eraser
+let eraser = document.createElement('button');
+eraser.id='eraser';
+let eraserPic = document.createElement('img')
+eraserPic.src = "https://purepng.com/public/uploads/large/purepng.com-erasereraserstationeryremovingwritingrubberyshapescolourspencil-eraser-142152650468306m0z.png";
+eraserPic.id='eraserPic';
+paletteFlex.appendChild(eraser);
+eraser.appendChild(eraserPic);
+eraser.addEventListener('click',eraserMode);
+function eraserMode(){
+    select.style.backgroundColor='white'
+}
+
+
+//color palette
+let palette = gridMe(3,5);
+palette.id='palette';
 paletteFlex.appendChild(palette);
 
-//paint grid
+
+
+//paint grid(canvas)
 let paint = gridMe(40,40);
 paint.id='paint'
 gridRow.appendChild(paint)
