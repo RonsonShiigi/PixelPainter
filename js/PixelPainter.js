@@ -96,8 +96,17 @@ eraserPic.id='eraserPic';
 paletteFlex.appendChild(eraser);
 eraser.appendChild(eraserPic);
 eraser.addEventListener('click',eraserMode);
+let miniEraser = document.createElement('img');
+miniEraser.src='https://purepng.com/public/uploads/large/purepng.com-erasereraserstationeryremovingwritingrubberyshapescolourspencil-eraser-142152650468306m0z.png';
+miniEraser.id='miniEraser';
+miniEraser.style.display='none';
+
 function eraserMode(){
-    select.style.backgroundColor='white'
+    select.style.backgroundColor='white';
+    if(miniEraser.style.display==='none'){
+       miniEraser.style.display='block'
+    }
+    
 }
 
 
@@ -119,7 +128,8 @@ select.id='select';
 let selectFlex = document.createElement('div');
 selectFlex.id='selectFlex';
 gridRow.appendChild(selectFlex);
-selectFlex.appendChild(select)
+selectFlex.appendChild(select);
+select.appendChild(miniEraser);
 
 
 //Setting palette up
@@ -141,15 +151,15 @@ let up = document.body.addEventListener('mouseup',upIt);
 
 function downIt(){
     mouse = true;
-    console.log(mouse);
+    // console.log(mouse);
 }
 
 function upIt(){
     mouse = false;
-    console.log(mouse)
+    // console.log(mouse)
 }
 
-//Adding the event listeners to the grid
+//Adding the event listeners to the palette
 
 for(var i=0;i<colors.length;i++){
     pix[i].style.backgroundColor=colors[i];
@@ -159,7 +169,12 @@ for(var i=0;i<colors.length;i++){
 
 function pow(){
     select.style.backgroundColor=this.style.backgroundColor;
+    if(miniEraser.style.display==='block'){
+        miniEraser.style.display='none';
+    }
 }
+
+//Adding event listeners to canvas
 
 for(var i=16;i<pix.length;i++){
     pix[i].addEventListener('mouseover',wow);
