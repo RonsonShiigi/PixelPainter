@@ -4,11 +4,12 @@
 
 
 var canvas = (function(){
-    
-    
+
 const pixelPainter = document.getElementById('pixelPainter')
 
-//Buttons
+
+
+//Buttons Row
 let buttonRow= document.createElement('div');
 buttonRow.id='buttonRow';
 pixelPainter.appendChild(buttonRow);
@@ -107,6 +108,25 @@ for(var i=0;i<pix.length;i++){
 //palette colors
 let colors = ['red','brown','rgb(255, 0, 216)','gray',  'black','rgb(255, 97, 0)','rgb(130, 76, 1)','blue','rgb(86, 114, 255)','rgb(19, 126, 130)','rgb(255, 204, 0)','rgb(249, 249, 0)','rgb(0, 249, 236) ','rgb(0, 255, 131)','rgb(32, 242, 29)'];
 
+//checking to see if mouse is clicked or not
+let mouse = false;
+let down = document.body.addEventListener('mousedown',downIt);
+let up = document.body.addEventListener('mouseup',upIt);
+
+function downIt(){
+    mouse = true;
+    console.log(mouse);
+}
+
+function upIt(){
+    mouse = false;
+    console.log(mouse)
+}
+
+
+
+
+
 for(var i=0;i<colors.length;i++){
     pix[i].style.backgroundColor=colors[i];
     pix[i].addEventListener('click',pow)
@@ -119,10 +139,16 @@ function pow(){
 
 for(var i=16;i<pix.length;i++){
     pix[i].addEventListener('mouseover',wow);
+    pix[i].addEventListener('click',startPaint)
+}
+function startPaint(){
+    this.style.backgroundColor=select.style.backgroundColor;
 }
 function wow(){
-   this.style.backgroundColor=select.style.backgroundColor;
-   console.log('hi')
+    if(mouse===true){   this.style.backgroundColor=select.style.backgroundColor;
+    console.log('hi')
+    }
+   
 }
 
 
