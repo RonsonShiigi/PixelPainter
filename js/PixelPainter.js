@@ -20,6 +20,14 @@ clear.id='clear';
 clear.className='topButtons';
 clear.innerHTML='Clear Color';
 buttonRow.appendChild(clear);
+clear.addEventListener('click',clearColor);
+function clearColor(){
+    for(var i=16;i<pix.length;i++){
+        if(pix[i].style.backgroundColor === select.style.backgroundColor){
+            pix[i].style.backgroundColor='white'
+        }
+    }
+}
 
 //Restart
 let restart = document.createElement('button');
@@ -123,9 +131,7 @@ function upIt(){
     console.log(mouse)
 }
 
-
-
-
+//Adding the event listeners to the grid
 
 for(var i=0;i<colors.length;i++){
     pix[i].style.backgroundColor=colors[i];
@@ -146,7 +152,6 @@ function startPaint(){
 }
 function wow(){
     if(mouse===true){   this.style.backgroundColor=select.style.backgroundColor;
-    console.log('hi')
     }
    
 }
