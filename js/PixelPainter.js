@@ -117,6 +117,9 @@ swatch.addEventListener('input',update);
 paletteFlex.appendChild(swatch);
 function update(){
     select.style.backgroundColor=swatch.value
+    if(miniEraser.style.display==='block'){
+        miniEraser.style.display='none';
+    }
 }
 
 
