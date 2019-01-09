@@ -27,9 +27,15 @@ h1{
 
 }
 
+button{
+    background-color: linear-gradient(to bottom right,rgb(143, 139, 139),white)
+
+}
+
 .topButtons{
     font-size: 25px;
     border-radius: 10px;
+    background-image: linear-gradient(to bottom right,rgb(143, 139, 139),white)
     
 }
 
@@ -78,7 +84,7 @@ h1{
     height:50px;
     width:50px;
     border-radius: 5px;
-    background-color:gray;
+    background-image: linear-gradient(to bottom right,rgb(143, 139, 139),white)
     
 }
 #eraserPic{
@@ -96,7 +102,7 @@ h1{
 }
 #swatch{
     height:50px;
-    width:50px;
+    width:55px;
     border:1px solid black;
     border-radius: 5px; 
     
