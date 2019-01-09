@@ -22,7 +22,7 @@ clear.innerHTML='Clear Color';
 buttonRow.appendChild(clear);
 clear.addEventListener('click',clearColor);
 function clearColor(){
-    for(var i=16;i<pix.length;i++){
+    for(var i=15;i<pix.length;i++){
         if(pix[i].style.backgroundColor === select.style.backgroundColor){
             pix[i].style.backgroundColor='white'
         }
@@ -37,7 +37,7 @@ restart.innerHTML='Restart';
 buttonRow.appendChild(restart);
 restart.addEventListener('click',restartFunc);
 function restartFunc(){
-for(var i=16;i<pix.length;i++){
+for(var i=15;i<pix.length;i++){
      pix[i].style.backgroundColor='white';
  }
 }
@@ -47,15 +47,28 @@ let save = document.createElement('button');
 save.id='save';
 save.className='topButtons'
 save.innerHTML='Save';
+save.addEventListener('click',saveIt);
 buttonRow.appendChild(save);
+let recall = [];
+function saveIt(){
+    recall = [];
+    for(var i=15;i<pix.length;i++){
+        recall.push(pix[i].style.backgroundColor);
+    }return recall;
+}
 
 //Go to last saved button
 let back = document.createElement('button');
 back.id='back';
 back.className='topButtons';
 back.innerHTML='Rewind';
+back.addEventListener('click',goBack);
 buttonRow.appendChild(back);
-
+function goBack(){
+    for(var i=15;i<pix.length;i++){
+        pix[i].style.backgroundColor=recall[i-15]
+    }
+}
 
 //grid function
 function gridMe(height,width){
@@ -223,7 +236,7 @@ function pow(){
 
 //Adding event listeners to canvas
 
-for(var i=16;i<pix.length;i++){
+for(var i=15;i<pix.length;i++){
     pix[i].addEventListener('mouseover',wow);
     pix[i].addEventListener('click',startPaint)
 }
