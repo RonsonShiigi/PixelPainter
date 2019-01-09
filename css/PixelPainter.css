@@ -1,7 +1,8 @@
 
 
 body{
-    background-image: url('https://i.imgur.com/GjscCgG.jpg')
+    background-image: url('https://i.imgur.com/GjscCgG.jpg');
+    cursor:url('https://purepng.com/public/uploads/large/purepng.com-erasereraserstationeryremovingwritingrubberyshapescolourspencil-eraser-142152650468306m0z.png');
 }
 
 h1{
@@ -21,12 +22,13 @@ h1{
     flex-direction: row;
     justify-content: space-around;
     align-content: center;
+    margin-bottom: 1%;
     
 
 }
 
 .topButtons{
-    font-size: 30px;
+    font-size: 25px;
     border-radius: 10px;
     
 }
@@ -35,7 +37,7 @@ h1{
 #gridRow{
     display:flex;
     flex-direction: row;
-    justify-content: flex-start;    
+    justify-content: flex-start; 
     height: 100vh;
     overflow: hidden;
     
@@ -62,24 +64,41 @@ h1{
     display:flex;
     flex-direction: column;
     justify-content: center;
+    align-content: flex-end;
     height:100%;
+    margin-right:-3%;
+}
+#tools{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    padding:5%;
 }
 #eraser{
-    height:70px;
-    width:70px;
-    border-radius: 5px;
-    background-color:gray;
-}
-#eraserPic{
     height:50px;
     width:50px;
+    border-radius: 5px;
+    background-color:gray;
+    
+}
+#eraserPic{
+    height:40px;
+    width:40px;
 }
 #miniEraser{
     height:55px;
     width:55px;
     margin:auto;
     margin-top:15%;
-   
+}
+#palette{
+    align-self: center;
+}
+#swatch{
+    height:50px;
+    width:50px;
+    border:1px solid black;
+    border-radius: 5px; 
     
 }
 
@@ -89,18 +108,15 @@ h1{
     justify-content: center;
 }
 #select{
-    height:80px;
-    width:80px;
+    height:95px;
+    width:95px;
     border:1px solid black;
     border-radius: 5px;
     background-color:white;
+    align-self: center;
+    margin-top:3%;
+    margin-right:-5%;
     
-}
-
-#swatch{
-    height:50px;
-    width:50px;
-    border:1px solid black;
 }
 
 /* canvas stuff */
@@ -112,17 +128,5 @@ h1{
 
 
 
-/* new grid idea */
-
-#wall{
-    display:grid;
-    
-}
-
-.piks{
-    height:10px;
-    width:10px;
-    border: 1px solid black;
-}
 
 

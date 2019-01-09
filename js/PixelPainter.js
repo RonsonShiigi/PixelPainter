@@ -99,6 +99,11 @@ pixelPainter.appendChild(gridRow);
 let paletteFlex=document.createElement('div');
 paletteFlex.id='paletteFlex';
 gridRow.appendChild(paletteFlex);
+let tools = document.createElement('div');
+tools.id='tools';
+paletteFlex.appendChild(tools);
+
+
 
 //eraser
 let eraser = document.createElement('button');
@@ -106,13 +111,17 @@ eraser.id='eraser';
 let eraserPic = document.createElement('img')
 eraserPic.src = "https://purepng.com/public/uploads/large/purepng.com-erasereraserstationeryremovingwritingrubberyshapescolourspencil-eraser-142152650468306m0z.png";
 eraserPic.id='eraserPic';
-paletteFlex.appendChild(eraser);
+tools.appendChild(eraser);
 eraser.appendChild(eraserPic);
 eraser.addEventListener('click',eraserMode);
 let miniEraser = document.createElement('img');
 miniEraser.src='https://purepng.com/public/uploads/large/purepng.com-erasereraserstationeryremovingwritingrubberyshapescolourspencil-eraser-142152650468306m0z.png';
 miniEraser.id='miniEraser';
 miniEraser.style.display='none';
+let eraserCursor=document.createElement('img');
+eraserCursor.id='ec';
+eraserCursor.src='https://purepng.com/public/uploads/large/purepng.com-erasereraserstationeryremovingwritingrubberyshapescolourspencil-eraser-142152650468306m0z.png';
+
 
 function eraserMode(){
     select.style.backgroundColor='white';
@@ -127,7 +136,7 @@ let swatch = document.createElement('input');
 swatch.type = 'color';
 swatch.id='swatch';
 swatch.addEventListener('input',update);
-paletteFlex.appendChild(swatch);
+tools.appendChild(swatch);
 function update(){
     select.style.backgroundColor=swatch.value
     if(miniEraser.style.display==='block'){
@@ -150,47 +159,11 @@ selectFlex.id='selectFlex';
 paletteFlex.appendChild(select);
 select.appendChild(miniEraser);
 
-
-
-
-
-
 //paint grid(canvas)
 
-let paint = gridMe(128,72);
+let paint = gridMe(370,140);
 paint.id='paint'
 gridRow.appendChild(paint);
-
-
-
-//new grid attempt
-// let wall = document.createElement('div');
-// wall.id='wall';
-// gridRow.appendChild(wall);
-// for(var i=0;i<100;i++){
-//     let piks = document.createElement('div');
-//     piks.className='piks';
-//     wall.appendChild(piks);
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //Setting palette up
 let pix = document.getElementsByClassName('pix');
@@ -199,6 +172,7 @@ for(var i=0;i<pix.length;i++){
     if(i<=14){
         pix[i].style.height = '30px';
         pix[i].style.width='30px';
+        pix[i].style.border = '1px solid black'
     }
 }
 //palette colors
