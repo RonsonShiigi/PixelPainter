@@ -109,19 +109,43 @@ function eraserMode(){
     
 }
 
+//color swatch stuff
+let swatch = document.createElement('input');
+swatch.type = 'color';
+swatch.id='swatch';
+swatch.addEventListener('input',update);
+paletteFlex.appendChild(swatch);
+function update(){
+    select.style.backgroundColor=swatch.value
+}
+
 
 //color palette
 let palette = gridMe(3,5);
 palette.id='palette';
 paletteFlex.appendChild(palette);
 
+//color selector
+let select = document.createElement('div');
+select.id='select';
+let selectFlex = document.createElement('div');
+selectFlex.id='selectFlex';
+// gridRow.appendChild(selectFlex);
+paletteFlex.appendChild(select);
+select.appendChild(miniEraser);
+
+
+
+
 
 
 //paint grid(canvas)
 
-let paint = gridMe(100,100);
+let paint = gridMe(128,72);
 paint.id='paint'
-gridRow.appendChild(paint)
+gridRow.appendChild(paint);
+
+
 
 //new grid attempt
 // let wall = document.createElement('div');
@@ -149,14 +173,7 @@ gridRow.appendChild(paint)
 
 
 
-//color selector
-let select = document.createElement('div');
-select.id='select';
-let selectFlex = document.createElement('div');
-selectFlex.id='selectFlex';
-// gridRow.appendChild(selectFlex);
-paletteFlex.appendChild(select);
-select.appendChild(miniEraser);
+
 
 
 //Setting palette up

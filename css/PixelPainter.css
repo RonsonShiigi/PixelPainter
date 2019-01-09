@@ -9,6 +9,10 @@ h1{
     font-family: 'Aleo', serif;
     font-size: 50px;
 }
+#pixelPainter{
+    height:100vh;
+    overflow: hidden;
+}
 
 /* button row stuff */
 #buttonRow{
@@ -17,11 +21,12 @@ h1{
     flex-direction: row;
     justify-content: space-around;
     align-content: center;
+    
 
 }
 
 .topButtons{
-    font-size: 35px;
+    font-size: 30px;
     border-radius: 10px;
     
 }
@@ -31,7 +36,8 @@ h1{
     display:flex;
     flex-direction: row;
     justify-content: flex-start;    
-    height: 100%;
+    height: 100vh;
+    overflow: hidden;
     
 }
 
@@ -43,15 +49,11 @@ h1{
     border: 1px solid black;
     background-color:white;
 }
-.dab{
-    height:30px;
-    width:30px;
-    border: 1px solid black;
-}
 
 .grid{
     display:flex;
     flex-direction: row;
+    margin-left: 5%;
 
 }
 
@@ -60,7 +62,7 @@ h1{
     display:flex;
     flex-direction: column;
     justify-content: center;
-    height: 100%;
+    height:100%;
 }
 #eraser{
     height:70px;
@@ -80,7 +82,7 @@ h1{
    
     
 }
-/* grid, and selector row */
+
 #selectFlex{
     display: flex;
     flex-direction: column;
@@ -95,7 +97,16 @@ h1{
     
 }
 
+#swatch{
+    height:50px;
+    width:50px;
+    border:1px solid black;
+}
 
+/* canvas stuff */
+#paint{
+    overflow:hidden;
+}
 
 
 
@@ -113,3 +124,5 @@ h1{
     width:10px;
     border: 1px solid black;
 }
+
+
