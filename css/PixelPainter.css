@@ -3,6 +3,7 @@
 body{
     background-image: url('https://i.imgur.com/GjscCgG.jpg');
     cursor:url('https://purepng.com/public/uploads/large/purepng.com-erasereraserstationeryremovingwritingrubberyshapescolourspencil-eraser-142152650468306m0z.png');
+    overflow: hidden;
 }
 
 h1{
@@ -44,7 +45,7 @@ button{
     display:flex;
     flex-direction: row;
     justify-content: flex-start; 
-    height: 100vh;
+    height: 95vh;
     overflow: hidden;
     
 }
