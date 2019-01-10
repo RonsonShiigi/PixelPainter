@@ -59,6 +59,7 @@ save.innerHTML='Save';
 save.addEventListener('click',saveIt);
 buttonRow.appendChild(save);
 let recall = [];
+
 function saveIt(){
     recall = [];
     for(var i=15;i<pix.length;i++){
@@ -202,7 +203,7 @@ function upIt(){
     mouse = false;
 }
 
-//Adding the event listeners to the palette
+//Adding the event listeners to the toolbox
 
 for(var i=0;i<colors.length;i++){
     pix[i].style.backgroundColor=colors[i];
