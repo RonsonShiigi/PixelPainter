@@ -21,6 +21,7 @@ clear.className='topButtons';
 clear.innerHTML='Clear Color';
 buttonRow.appendChild(clear);
 clear.addEventListener('click',clearColor);
+
 function clearColor(){
     for(var i=15;i<pix.length;i++){
         if(pix[i].style.backgroundColor === select.style.backgroundColor){
@@ -29,6 +30,9 @@ function clearColor(){
     }
 }
 
+
+
+
 //Restart
 let restart = document.createElement('button');
 restart.id='restart';
@@ -36,7 +40,12 @@ restart.className='topButtons';
 restart.innerHTML='Restart';
 buttonRow.appendChild(restart);
 restart.addEventListener('click',restartFunc);
+let crumple = document.createElement('audio');
+crumple.src='Crumple.wav';
+crumple.id='crumple';
+
 function restartFunc(){
+    crumple.play();
 for(var i=15;i<pix.length;i++){
      pix[i].style.backgroundColor='white';
  }
@@ -137,6 +146,7 @@ swatch.type = 'color';
 swatch.id='swatch';
 swatch.addEventListener('input',update);
 tools.appendChild(swatch);
+
 function update(){
     select.style.backgroundColor=swatch.value
     if(miniEraser.style.display==='block'){
@@ -155,12 +165,12 @@ let select = document.createElement('div');
 select.id='select';
 let selectFlex = document.createElement('div');
 selectFlex.id='selectFlex';
+
 // gridRow.appendChild(selectFlex);
 paletteFlex.appendChild(select);
 select.appendChild(miniEraser);
 
 //paint grid(canvas)
-
 let paint = gridMe(370,140);
 paint.id='paint'
 gridRow.appendChild(paint);
@@ -175,6 +185,7 @@ for(var i=0;i<pix.length;i++){
         pix[i].style.border = '1px solid black'
     }
 }
+
 //palette colors
 let colors = ['red','brown','rgb(255, 0, 216)','gray',  'black','rgb(255, 97, 0)','rgb(130, 76, 1)','blue','rgb(86, 114, 255)','rgb(19, 126, 130)','rgb(255, 204, 0)','rgb(249, 249, 0)','rgb(0, 249, 236) ','rgb(0, 255, 131)','rgb(32, 242, 29)'];
 
@@ -185,12 +196,10 @@ let up = document.body.addEventListener('mouseup',upIt);
 
 function downIt(){
     mouse = true;
-    // console.log(mouse);
 }
 
 function upIt(){
     mouse = false;
-    // console.log(mouse)
 }
 
 //Adding the event listeners to the palette
@@ -214,9 +223,11 @@ for(var i=15;i<pix.length;i++){
     pix[i].addEventListener('mouseover',wow);
     pix[i].addEventListener('click',startPaint)
 }
+
 function startPaint(){
     this.style.backgroundColor=select.style.backgroundColor;
 }
+
 function wow(){
     if(mouse===true){   this.style.backgroundColor=select.style.backgroundColor;
     }
