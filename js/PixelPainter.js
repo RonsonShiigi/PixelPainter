@@ -21,8 +21,11 @@ clear.className='topButtons';
 clear.innerHTML='Clear Color';
 buttonRow.appendChild(clear);
 clear.addEventListener('click',clearColor);
+let aw = document.createElement('audio');
+aw.src='aw.wav'
 
 function clearColor(){
+    aw.play();
     for(var i=15;i<pix.length;i++){
         if(pix[i].style.backgroundColor === select.style.backgroundColor){
             pix[i].style.backgroundColor='white'
@@ -58,9 +61,13 @@ save.className='topButtons'
 save.innerHTML='Save';
 save.addEventListener('click',saveIt);
 buttonRow.appendChild(save);
+let chaching = document.createElement('audio');
+chaching.src ='Chaching.wav';
+
 let recall = [];
 
 function saveIt(){
+    chaching.play();
     recall = [];
     for(var i=15;i<pix.length;i++){
         recall.push(pix[i].style.backgroundColor);
