@@ -74,7 +74,11 @@ back.className='topButtons';
 back.innerHTML='Rewind';
 back.addEventListener('click',goBack);
 buttonRow.appendChild(back);
+let rewind = document.createElement('audio');
+rewind.id='rewind';
+rewind.src='Rewind.wav'
 function goBack(){
+    rewind.play();
     for(var i=15;i<pix.length;i++){
         pix[i].style.backgroundColor=recall[i-15]
     }
@@ -225,13 +229,11 @@ for(var i=15;i<pix.length;i++){
     pix[i].addEventListener('click',startPaint)
 }
 
-let pixArr = [];
-for(var i=15;i<pix.length;i++){
-    pixArr.push(pix[i]);
-}
+
+
 function startPaint(){
     this.style.backgroundColor=select.style.backgroundColor;
-    console.log(this)
+    console.log(pix)
 
     
 }
