@@ -103,7 +103,9 @@ function gridMe(height,width){
         for(var j=0;j<width;j++){
             let pix = document.createElement('div');
             pix.className='pix';
+            pix.id='x'+j+'y'+i
             column.appendChild(pix);
+            
 
 
         }
@@ -143,10 +145,12 @@ miniEraser.style.display='none';
 let eraserCursor=document.createElement('img');
 eraserCursor.id='ec';
 eraserCursor.src='https://purepng.com/public/uploads/large/purepng.com-erasereraserstationeryremovingwritingrubberyshapescolourspencil-eraser-142152650468306m0z.png';
+eraserCursor.width='32px';
+eraserCursor.height='32px';
 
 
 function eraserMode(){
-    select.style.backgroundColor='white';
+   select.style.backgroundColor='white';
     if(miniEraser.style.display==='none'){
        miniEraser.style.display='block'
     }
@@ -196,6 +200,7 @@ for(var i=0;i<pix.length;i++){
         pix[i].style.height = '30px';
         pix[i].style.width='30px';
         pix[i].style.border = '1px solid black'
+        pix[i].id='paletteID';
     }
 }
 
@@ -239,9 +244,9 @@ for(var i=15;i<pix.length;i++){
 
 
 
-function startPaint(){
+function startPaint(e){
     this.style.backgroundColor=select.style.backgroundColor;
-    console.log(pix)
+    
 
     
 }
