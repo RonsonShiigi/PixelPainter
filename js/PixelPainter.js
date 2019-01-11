@@ -21,11 +21,11 @@ clear.className='topButtons';
 clear.innerHTML='Clear Color';
 buttonRow.appendChild(clear);
 clear.addEventListener('click',clearColor);
-let aw = document.createElement('audio');
-aw.src='aw.wav'
+// let aw = document.createElement('audio');
+// aw.src='aw.wav'
 
 function clearColor(){
-    aw.play();
+    // aw.play();
     for(var i=15;i<pix.length;i++){
         if(pix[i].style.backgroundColor === select.style.backgroundColor){
             pix[i].style.backgroundColor='white'
@@ -84,6 +84,7 @@ buttonRow.appendChild(back);
 let rewind = document.createElement('audio');
 rewind.id='rewind';
 rewind.src='Rewind.wav'
+
 function goBack(){
     rewind.play();
     for(var i=15;i<pix.length;i++){
